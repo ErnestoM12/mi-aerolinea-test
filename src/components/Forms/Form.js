@@ -80,6 +80,7 @@ const Form = ({ cities, fetchCities, addReservation }) => {
             addReservation(completeData)
             setDestino('')
             setOrigen('')
+            setHoraPrecio({})
             reset()
         }
     }

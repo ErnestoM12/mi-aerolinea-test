@@ -3,9 +3,9 @@ import styles from '../styles/Modal.module.css'
 
 
 
-const Modal = ({ children, isOpen, closeModal,dataCity}) => {
-       
-    
+const Modal = ({ children, isOpen, closeModal }) => {
+
+
     return (
         <article className={`${styles.modal}  ${isOpen && styles['is-open']}`}>
             <div className={styles['modal-container']}>

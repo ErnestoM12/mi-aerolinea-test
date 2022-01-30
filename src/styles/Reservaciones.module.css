@@ -1,0 +1,38 @@
+.container{
+    padding: 4em 4em;
+}
+
+.table{
+  overflow-x:auto;
+  width:100%;
+}
+
+.table .th, td {
+    border: 1px solid black;
+    border-radius: 10px;
+    text-align:center;
+  }
+
+.eliminar{
+  background: #9f0000;
+  color: white;
+}
+  
+.eliminar:hover {
+    transform: scale(1.1);
+    transition: 0.3s;
+}
+
+.pagar {
+  background-color: #1d1f1d;
+  width: 16em;
+  height: 3em;
+  margin-left: 0em;
+  color: white;
+  margin-top: 1em;
+}
+
+.pagar p {
+  font-size: 1.3rem;
+  margin: 0;
+}

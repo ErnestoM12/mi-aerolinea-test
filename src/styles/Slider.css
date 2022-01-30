@@ -1,0 +1,38 @@
+ .Carrousel_img{
+     width: 100%;
+     height: 100vh;
+     position: absolute;
+     left: 0;
+     opacity: 1;
+     top:0;
+ 
+ }
+
+ /*cuando se monta right*/
+ .slide-enter{
+     position: absolute;
+     transform: translateY(-100%);
+     opacity: 0;
+ 
+ }
+ .slide-enter-active{
+     position: absolute;
+     transform: translateY(0%);
+     transition: all 1s ease;
+     opacity: 0.5;
+ }
+ /*cuando se desmonta*/
+ .slide-exit{
+     position: absolute;
+     transform: translateY(0%);
+     opacity:  0.5;
+ }
+ 
+ .slide-exit-active{
+     position: absolute;
+     transform: translateY(100%);
+     transition: all 1s ease;
+     opacity: 0;
+ 
+ }
+

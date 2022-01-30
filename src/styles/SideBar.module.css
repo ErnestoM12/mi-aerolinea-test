@@ -1,0 +1,9 @@
+
+.sideBar{
+position: absolute;
+z-index: 32;
+background: rgba(127, 127, 127, 0.4);
+margin-top: 9em;
+width: 21em;
+right: 2em;
+}

@@ -1,0 +1,17 @@
+.ul{
+    padding:0;
+}
+
+.ul li {
+    background:white;
+    margin-bottom: 0.5em;
+    border-left: 8px solid #fff;
+}
+
+.ul li  span{
+    font-weight: bold;
+}
+
+.ul li:hover {
+    border-left: 8px solid #1d1f1d;;
+  }

@@ -1,26 +1,28 @@
-.container{
-    padding: 4em 4em;
+.container {
+  padding: 4em 4em;
+  height: 100vh;
 }
 
-.table{
-  overflow-x:auto;
-  width:100%;
+.table {
+  overflow-x: auto;
+  width: 100%;
 }
 
-.table .th, td {
-    border: 1px solid black;
-    border-radius: 10px;
-    text-align:center;
-  }
+.table .th,
+td {
+  border: 1px solid black;
+  border-radius: 10px;
+  text-align: center;
+}
 
-.eliminar{
+.eliminar {
   background: #9f0000;
   color: white;
 }
-  
+
 .eliminar:hover {
-    transform: scale(1.1);
-    transition: 0.3s;
+  transform: scale(1.1);
+  transition: 0.3s;
 }
 
 .pagar {

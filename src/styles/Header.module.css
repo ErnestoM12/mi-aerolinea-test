@@ -1,16 +1,15 @@
-.numerReservas{
-  color:green;
+.numerReservas {
+  color: green;
   font-weight: bold;
   font-size: 1.1em;
 }
 
-.active{
+.active {
   color: #7f7f7f !important;
 }
 
 .header a {
   text-decoration: none;
-
 }
 
 .header {
@@ -35,8 +34,6 @@
   color: #fff;
 }
 
-
-
 .nav ul {
   list-style: none;
   height: 100%;
@@ -54,7 +51,6 @@ nav ul li {
   margin-left: 10px;
 }
 
-
 .hamburger-icon {
   margin: auto 0;
   display: none;
@@ -63,7 +59,7 @@ nav ul li {
 
 .hamburger-icon div {
   width: 1.5em;
-  height: 0.2em;;
+  height: 0.2em;
   background-color: white;
   margin: 6px 0;
   transition: 0.4s;
@@ -96,14 +92,15 @@ nav ul li {
   top: 2.4em;
   left: 0;
   color: white;
+  padding: 10px;
 }
 
 .mobile-menu {
   display: none;
   position: absolute;
- }
+}
 
- .mobile-menu li {
+.mobile-menu li {
   margin-bottom: 10px;
 }
 
@@ -115,7 +112,6 @@ nav ul li {
   margin-left: 10px;
 }
 
-
 @media only screen and (max-width: 600px) {
   .header nav {
     display: none;
@@ -124,5 +120,4 @@ nav ul li {
   .hamburger-icon {
     display: block;
   }
-
 }

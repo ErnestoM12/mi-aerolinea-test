@@ -6,12 +6,12 @@ import { addReservation } from '../../redux/actions/reservationActions'
 import Modal from '../../components/Modal.js';
 import styles from '../../styles/Form.module.css'
 import { getId } from '../../utils'
-import InputSearch from './InputSearch'
+import SearchInput from './Search/SearchInput';
 import Hours from './Hours'
 import axios from 'axios'
 
 
-const Form = ({ cities, fetchCities, addReservation }) => {
+const Form = ({ cities, addReservation }) => {
     //diabled button state
     const [disableBtn, setDisaleBtn] = useState(true);
     //origen state
@@ -24,6 +24,7 @@ const Form = ({ cities, fetchCities, addReservation }) => {
     const { register, watch, handleSubmit, setValue, reset, formState: { errors } } = useForm();
     //call modall hook
     const [isOpen, openModal, closeModal] = useModal(false);
+
     //fetchin data
     const [dataFetching, setDataFetching] = useState([])
     const [isFetching, setFetching] = useState(true)
@@ -40,7 +41,7 @@ const Form = ({ cities, fetchCities, addReservation }) => {
 
 
     //handle click city selected
-    const handleClick = async (data) => {
+    const selectCity = async (data) => {
         if (data.tipo === 'destino') {
             setValue('destino', data.city)
             setDestino(data.city)
@@ -121,20 +122,23 @@ const Form = ({ cities, fetchCities, addReservation }) => {
                 </p>
 
                 <label htmlFor="origen">
-                    <InputSearch cities={cities.cities} placeHolder='Origen' className={`${styles['input-large']}
-                       ${errors.origen && styles['error-active']}`}
+                    <SearchInput
+                        data={cities.cities}
+                        placeHolder='Origen'
+                        className={`${styles['input-large']} ${errors.origen && styles['error-active']}`}
                         form={{ ...register("origen", { required: true }) }}
                         tipo='origen'
-                        handleClick={handleClick}
+                        selectCity={selectCity}
                     />
                 </label>
 
                 <label htmlFor="destino">
-                    <InputSearch cities={cities.cities} placeHolder='Destino' className={`${styles['input-large']}
-                       ${errors.origen && styles['error-active']}`}
+                    <SearchInput
+                        data={cities.cities} placeHolder='Destino'
+                        className={`${styles['input-large']}  ${errors.origen && styles['error-active']}`}
                         form={{ ...register("destino", { required: true }) }}
                         tipo='destino'
-                        handleClick={handleClick}
+                        selectCity={selectCity}
                     />
                 </label>
 

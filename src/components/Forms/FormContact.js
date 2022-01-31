@@ -29,7 +29,6 @@ const FormContact = ({ closeModal, deleteAll }) => {
       reset();
       deleteAll();
       setCompraRealizada(true);
-
       setTimeout(() => {
          closeModal();
       }, 4000);

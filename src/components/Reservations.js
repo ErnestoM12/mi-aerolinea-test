@@ -42,46 +42,48 @@ const Reservations = ({ deleteAll, deleteReservation, reservation }) => {
       {total > 0 ? (
         <>
           <button className={styles.eliminar} onClick={btnClearCard}>Eliminar todas</button>
-          <table className={styles.table}>
-            <thead>
-              <tr>
-                <th>Fecha Salida</th>
-                <th>Fecha Regreso</th>
-                <th>Origen</th>
-                <th>Destino</th>
-                <th>Hora Salida</th>
-                <th>Número Parajeros</th>
-                <th>Precio Total</th>
-                <th>Eliminar</th>
-              </tr>
-            </thead>
-            <tbody>
-              {reservation.reservations.map(reserv => {
-                const unitTotal = reserv.price * reserv.numeroPasajeros;
-                return (
-                  <tr key={reserv.localId}>
-                    <td>{reserv.fechaSalida}</td>
-                    <td>{reserv.fechaSalida}</td>
-                    <td>{reserv.origen}</td>
-                    <td>{reserv.destino}</td>
-                    <td>{reserv.hour}</td>
-                    <td>{reserv.numeroPasajeros}</td>
-                    <td>${unitTotal}</td>
-                    <td className={styles.eliminar} onClick={() => {
-                      deleteReservation(reserv)
-                    }}> X</td>
-                  </tr>
-                )
-              })
-              }
-            </tbody>
-            <tfoot>
-              <tr>
-                <td>Total</td>
-                <td>${total}</td>
-              </tr>
-            </tfoot>
-          </table>
+          <div className={styles['table-container']}>
+            <table className={styles.table}>
+              <thead>
+                <tr>
+                  <th>Fecha Salida</th>
+                  <th>Fecha Regreso</th>
+                  <th>Origen</th>
+                  <th>Destino</th>
+                  <th>Hora Salida</th>
+                  <th>Número Parajeros</th>
+                  <th>Precio Total</th>
+                  <th>Eliminar</th>
+                </tr>
+              </thead>
+              <tbody>
+                {reservation.reservations.map(reserv => {
+                  const unitTotal = reserv.price * reserv.numeroPasajeros;
+                  return (
+                    <tr key={reserv.localId}>
+                      <td>{reserv.fechaSalida}</td>
+                      <td>{reserv.fechaSalida}</td>
+                      <td>{reserv.origen}</td>
+                      <td>{reserv.destino}</td>
+                      <td>{reserv.hour}</td>
+                      <td>{reserv.numeroPasajeros}</td>
+                      <td>${unitTotal}</td>
+                      <td className={styles.eliminar} onClick={() => {
+                        deleteReservation(reserv)
+                      }}> X</td>
+                    </tr>
+                  )
+                })
+                }
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td>Total</td>
+                  <td>${total}</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
           <button className={styles.pagar} onClick={btnPayment}><p>P A G A R</p></button>
         </>) : (<h3>No se ha realizado ninguna reserva</h3>)}
     </div>)

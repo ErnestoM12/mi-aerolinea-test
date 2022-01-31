@@ -54,8 +54,8 @@
   color: #fff;
   width: 28em;
   height: 4em;
-  display: block;
-  margin: 0.5em auto 0.5em auto;
+  margin: 0.5em;
+  margin-left: 3em;
 }
 
 .btn-send p {
@@ -144,6 +144,8 @@
     background-color: #1d1f1d;
     width: 21em;
     height: 3em;
+    margin: 0.5em auto 0.5em auto;
+    display: block;
   }
 
   .btn-send p {

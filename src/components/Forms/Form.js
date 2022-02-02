@@ -12,8 +12,8 @@ import axios from 'axios'
 
 
 const Form = ({ cities, addReservation }) => {
-    //diabled button state
-    const [disableBtn, setDisaleBtn] = useState(true);
+    //disabled button state
+    const [disableBtn, setDisableBtn] = useState(true);
     //origen state
     const [origen, setOrigen] = useState('');
     //destino state
@@ -31,10 +31,15 @@ const Form = ({ cities, addReservation }) => {
 
     //valid fields are not empty
     useEffect(() => {
+
         const subscription = watch((values) => {
-            if (!Object.values(values).includes('')) {
-                setDisaleBtn(false)
-            };
+
+            if (!Object.values(values).includes('') && Object.keys(values).length > 0) {
+                setDisableBtn(false)
+            } else {
+                setDisableBtn(true)
+            }
+
         });
         return () => subscription.unsubscribe();
     }, [watch]);
@@ -70,6 +75,7 @@ const Form = ({ cities, addReservation }) => {
 
     //handler submit
     const onSubmit = (data) => {
+
         if (Object.keys(horaPrecio).length === 0) {
             openModal(true)
         } else {
@@ -84,6 +90,9 @@ const Form = ({ cities, addReservation }) => {
             setHoraPrecio({})
             reset()
         }
+
+
+
     }
     return (
         <div className={styles.card}>

@@ -34,7 +34,6 @@ const SearchInput = ({
         type="text"
         placeholder={placeHolder}
         className={className}
-        form={form}
         ref={element}
         onChange={onChange}
       />

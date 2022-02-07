@@ -1,4 +1,4 @@
-import axios from "axios"
+import API from "../../services/api"
 
 export const FETCH_CITIES_REQUEST = 'FETCH_CITIES_REQUEST'
 export const FETCH_CITIES_SUCCESS = 'FETCH_CITIES_SUCCESS'
@@ -8,7 +8,7 @@ export const fetchCities = () => async (dispatch) => {
 
   dispatch({ type: FETCH_CITIES_REQUEST })
   try {
-    const res = await axios.get('https://mi-aerolinea.herokuapp.com/api/city')
+    const res = await API.get('/city')
 
     dispatch({
       type: FETCH_CITIES_SUCCESS,

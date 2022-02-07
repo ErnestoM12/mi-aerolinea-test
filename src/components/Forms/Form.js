@@ -8,7 +8,7 @@ import styles from '../../styles/Form.module.css'
 import { getId } from '../../utils'
 import SearchInput from './Search/SearchInput';
 import Hours from './Hours'
-import axios from 'axios'
+import API from '../../services/api';
 
 
 const Form = ({ cities, addReservation }) => {
@@ -52,7 +52,7 @@ const Form = ({ cities, addReservation }) => {
             setDestino(data.city)
             setFetching(true)
             try {
-                const res = await axios.get(`https://mi-aerolinea.herokuapp.com/api/city/${data._id}`)
+                const res = await API.get(`city/${data._id}`)
                 setDataFetching(res.data.city)
             } catch (error) {
                 console.log(error);
